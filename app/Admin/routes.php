@@ -14,5 +14,7 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('home');
     
     $router->resource('patients', PatientsController::class);
+    $router->resource('cases', CasesController::class);
+    $router->resource('reports', ReportsController::class);
 
 });

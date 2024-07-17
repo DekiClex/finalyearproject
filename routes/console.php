@@ -2,6 +2,8 @@
 
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
+use \App\Models\Patients;
+use OpenAdmin\Admin\Grid;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,9 @@ use Illuminate\Support\Facades\Artisan;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
+
+Artisan::command('testCommand', function () {
+    $grid = new Grid(new Patients());
+
+    $grid->column('PatientID', __('Patient ID'));
+});
